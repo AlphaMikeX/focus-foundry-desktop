@@ -1,0 +1,26 @@
+html,
+body,
+#overlay-root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+}
+
+.vignette {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 260ms ease, background 260ms ease;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0) calc(45% - (var(--progress) * 32%)),
+    rgba(0, 0, 0, 0.8) calc(78% - (var(--progress) * 22%)),
+    rgba(0, 0, 0, 0.98)
+  );
+}
+
+.vignette.active {
+  opacity: clamp(0, var(--progress), 1);
+}
