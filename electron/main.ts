@@ -31,7 +31,7 @@ const getRendererUrl = (entry: 'main' | 'overlay'): string => {
       : `${process.env.VITE_DEV_SERVER_URL}/overlay.html`;
   }
 
-  const base = join(__dirname, '../renderer');
+  const base = join(__dirname, '../../renderer');
   return `file://${join(base, entry === 'main' ? 'index.html' : 'overlay.html')}`;
 };
 
